@@ -1,0 +1,16 @@
+Video Notes:
+
+- Added transparency to objects using blending. 
+	- Realized we needed to support transparent images so we imported a class to load PNGs
+	- Realized we couldn't render semi-transparency without sorting the transparent objects 
+	(which was not done via the Scene Node structure) so we added a Blending class to do so. 
+
+- Added parsing of quads in obj files. 
+
+- Added billboarding to particles so that they'd face camera when adjusted from the side. 
+	- Had to modify billboarding code when we realized it didn't take the projection matrix into account. 
+
+- Added a particle generator class that created smaller particle scene nodes which had features such as fading, 
+moving via velocity, color, etc. 
+
+- Modified particle code to take in an object and a shader so that they could be recycled (vastly improving performance). 
