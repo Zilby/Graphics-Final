@@ -1,0 +1,25 @@
+#!/usr/bin/env python
+
+# DO NOT MODIFY THIS FILE
+# I will know you modified this file and tried to use a different
+# test based on your git history. That is against the rules.
+
+# This is the minimum criteria needed before commiting a file
+# in this repository.
+import sys, os
+
+ret1 = os.system('make clean')
+ret2 = os.system('make')
+ret3 = os.system('./hello')
+
+testDir = os.getcwd()
+
+print("========== Automated test running(pre-commit) "+testDir+"==========")
+# A non-zero return value from our program terminates this.
+if(ret1 != 0 or ret2 !=0 or ret3!=0):
+    print("Your code compiles with errors!")
+    print("Leaving errors in your code will receive a 0!")
+    print("Your command will now continue")
+else:
+    print("Preliminary testing passed. Continuing to commit message")
+print("========== Automated test running(pre-commit) "+testDir+"==========")
